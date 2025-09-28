@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Từ điển Anh-Việt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">📘 Dictionary</h1>
+    <nav>
+      <a href="login.html" id="loginBtn" class="btn">Đăng nhập</a>
+      <a href="#" id="logoutBtn" class="btn hidden">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main class="dictionary-container">
+    <section class="search-box">
+      <input type="text" id="wordInput" placeholder="Nhập từ cần tra...">
+      <button id="searchBtn" class="btn">Tra từ</button>
+    </section>
+
+    <section class="result-box" id="resultBox"></section>
+
+    <section class="saved-words">
+      <h2>Từ đã lưu</h2>
+      <ul id="savedList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

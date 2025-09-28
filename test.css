@@ -1,0 +1,53 @@
+:root{
+  --bg: #ffffff;
+  --text: #222222;
+  --card: #f9f9f9;
+  --btn-bg: #1976d2;
+  --btn-text: #ffffff;
+  --accent: #1976d2;
+}
+
+/* Black / Dark mode (gán lên html hoặc body) */
+html.dark-mode {
+  --bg: #000000;        /* black mode */
+  --text: #e6e6e6;
+  --card: #0f0f0f;
+  --btn-bg: #333333;
+  --btn-text: #fff;
+  --accent: #88c0ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* ví dụ card */
+.card {
+  background-color: var(--card);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* nút toggle */
+#toggle-theme {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: 16px;
+}
+
+/* Nếu có element cụ thể override màu background, thêm rule cho dark mode */
+html.dark-mode .special-container {
+  background-color: var(--card);
+}
