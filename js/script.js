@@ -21,29 +21,59 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // ================== API TRA TỪ ================== //
+// Hàm tra từ tiếng Anh
 async function fetchWord(word) {
+  if (!word || !word.trim()) {
+    alert("Vui lòng nhập từ cần tra!");
+    return null;
+  }
   try {
-    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word.trim())}`);
     if (!res.ok) throw new Error("Không tìm thấy từ!");
     const data = await res.json();
-    return data[0];
+    const entry = data[0];
+    // Lấy thông tin cơ bản
+    return {
+      word: entry.word,
+      phonetic: entry.phonetic || (entry.phonetics && entry.phonetics[0]?.text) || "",
+      audio: (entry.phonetics && entry.phonetics[0]?.audio) || "",
+      meanings: entry.meanings.map(m => ({
+        partOfSpeech: m.partOfSpeech,
+        definition: m.definitions[0]?.definition || "",
+        example: m.definitions[0]?.example || ""
+      }))
+    };
   } catch (error) {
+    console.error("Lỗi tra từ:", error);
     alert("Lỗi tra từ: " + error.message);
     return null;
   }
 }
 
+// Hàm dịch sang tiếng Việt
 async function translateToVietnamese(text) {
+  if (!text) return "Không có nội dung để dịch.";
   try {
-    const res = await fetch(
-      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|vi`
-    );
+    const res = await fetch("https://libretranslate.com/translate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        q: text,
+        source: "en",
+        target: "vi",
+        format: "text"
+      })
+    });
+    if (!res.ok) throw new Error("Lỗi máy chủ dịch.");
     const data = await res.json();
-    return data.responseData.translatedText || "Không dịch được.";
-  } catch {
+    return data.translatedText || "Không dịch được.";
+  } catch (error) {
+    console.error("Lỗi dịch:", error);
     return "Không dịch được.";
   }
 }
+
+
 
 // ================== TRA TỪ & LƯU FIRESTORE ================== //
 const searchBtn = document.getElementById("searchBtn");
