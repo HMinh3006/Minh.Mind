@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Từ điển Anh-Việt</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="logo">📘 Akihiro Dictionary</h1>
+    <nav>
+      <a href="login.html" id="loginBtn" class="btn">Đăng nhập</a>
+      <a href="#" id="logoutBtn" class="btn hidden">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main class="dictionary-container">
+    <section class="search-box">
+      <input type="text" id="wordInput" placeholder="Nhập từ cần tra..." />
+      <button id="searchBtn" class="btn">Tra từ</button>
+    </section>
+
+    <section class="result-box" id="resultBox"></section>
+
+    <section class="saved-words">
+      <h2>Từ đã lưu</h2>
+      <ul id="savedList"></ul>
+    </section>
+  </main>
+
+  <!-- các trang dịch nhỏ -->
+  <section class="vocab-section">
+    <div class="vocab-header">
+      <h2>Các bộ từ vựng</h2>
+    </div>
+
+    <div class="vocab-grid">
+      <div class="vocab-card" title="Từ vựng chuyên ngành y học">
+        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/d3/5d/68/d35d681a-6fd9-df9f-f69c-9494ccdefdd6/source/512x512bb.jpg" alt="Y học" />
+        <button><a href="yhoc.html">Y học</a></button>
+      </div>
+
+      <div class="vocab-card" title="Từ vựng IELTS theo chủ đề phổ biến">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.8QgwqALuaCqxm_RUIhsESAHaEy?pid=Api&P=0&h=180" alt="IELTS" />
+        <p>Từ vựng IELTS theo chủ đề</p>
+      </div>
+
+      <div class="vocab-card" title="Từ vựng chương trình lớp 10">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.mSs-xw8apO6NiWG1tI-vqQAAAA?pid=Api&P=0&h=180" alt="Lớp 10" />
+        <p>Lớp 10</p>
+      </div>
+
+      <div class="vocab-card" title="Từ vựng chương trình lớp 11">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.wuLnWbXox_rqcd-G9WfciAHaHa?pid=Api&P=0&h=180" alt="Lớp 11" />
+        <p>Lớp 11</p>
+      </div>
+
+      <div class="vocab-card" title="Từ vựng chương trình lớp 12">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.h6bYZbAj37Fpn-i9-p5urQAAAA?pid=Api&P=0&h=180" alt="Lớp 12" />
+        <p>Lớp 12</p>
+      </div>
+
+      <div class="vocab-card" title="Danh sách 5000 từ Oxford theo level">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.-NgOZBqf0nsxNai_nyhmOQHaHa?pid=Api&P=0&h=180" alt="Oxford" />
+        <p>5000 từ Oxford theo level</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Akihiro Dictionary — Designed by Minh</p>
+    <div class="footer-links">
+      <a href="#">Chính sách</a>
+      <a href="#">Liên hệ</a>
+      <a href="#">Giới thiệu</a>
+    </div>
+  </footer>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

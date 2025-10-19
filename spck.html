@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>English–Vietnamese Dictionary</title>
+  <link rel="stylesheet" href="css/spck.css"/>
+</head>
+<body>
+
+  <!-- Đăng ký/Đăng nhập ở góc phải -->
+  <div class="top-bar">
+    <div class="auth-box" id="authSection">
+      <input type="text" id="username" placeholder="Tên người dùng">
+      <input type="password" id="password" placeholder="Mật khẩu">
+      <button onclick="register()">Đăng ký</button>
+      <button onclick="login()">Đăng nhập</button>
+      <p id="authMessage"></p>
+    </div>
+    <div class="logout-box" id="logoutSection" style="display:none;">
+      <p>Xin chào, <span id="userDisplay"></span></p>
+      <button onclick="logout()">Đăng xuất</button>
+    </div>
+  </div>
+
+  <h1 class="js">Mindx Dictionary</h1>
+  <header><h1>Từ điển Anh - Việt</h1></header>
+
+  <main>
+    <div id="appSection">
+      <h2>Tra từ điển</h2>
+      <div class="grid">
+        <input type="text" id="wordInput" placeholder="Nhập từ tiếng Anh..."/>
+        <button onclick="searchWord()">Tra</button>
+      </div>
+      <div id="result"></div>
+
+      <h3>Từ đã lưu</h3>
+      <div class="grid">
+        <input type="text" id="savedWord" placeholder="Từ cần lưu/chỉnh sửa"/>
+        <button onclick="saveWord()" id="saveBtn">Lưu</button>
+        <button onclick="updateWord()" id="updateBtn">Cập nhật</button>
+        <button onclick="deleteWord()" id="deleteBtn">Xóa</button>
+      </div>
+      <ul id="wordList"></ul>
+    </div>
+  </main>
+
+  <div class="div">
+    <h1 class="h1">Mindx Dictionary</h1>
+    <p class="p1">Từ điển trực tuyến miễn phí cho người Việt</p>
+    <p class="p1">Cung cấp bộ từ điển chính: Anh – Việt</p>
+    <p class="p1">Mindx Dictionary giúp tra cứu nhanh chóng nhất.</p>
+  </div>
+
+  <footer><p>© Anh-Viet Dictionary</p></footer>
+  <script  type="module" src="js/spck.js"></script>
+ <button id="toggle-theme" aria-label="Chuyển chế độ">🌙</button>
+</body>
+</html>
