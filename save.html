@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Các từ đã lưu - Akihiro Dictionary</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">📘 Akihiro Dictionary</h1>
+    <nav>
+      <a href="index.html" class="btn">Trang chủ</a>
+      <a href="new.html" class="btn">Bài báo tiếng Anh</a>
+      <a href="login.html" id="loginBtn" class="btn">Đăng nhập</a>
+      <a href="#" id="logoutBtn" class="btn hidden">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main class="dictionary-container">
+    <section class="saved-words">
+      <h2>📚 Danh sách từ đã lưu</h2>
+      <ul id="savedList"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">`
+    <p>© 2025 Akihiro Dictionary — Designed by Minh</p>
+  </footer>
+
+  <script type="module" src="js/check_Session.js"></script>
+  <script type="module" src="js/crud.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>

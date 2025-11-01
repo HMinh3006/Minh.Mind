@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Từ điển Anh-Việt</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">📘 Dictionary</h1>
+    <nav>
+      <a href="register.html" class="btn">Đăng ký</a>
+    </nav>
+  </header>
+
+  <!-- 🌙 Nút chuyển Dark Mode -->
+  <button id="toggle-dark">🌙 Dark Mode</button>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <h2>Đăng nhập</h2>
+      <p class="desc">Đăng nhập để quản lý từ đã lưu và đồng bộ trên trình duyệt của bạn.</p>
+
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Tên đăng nhập" required>
+        <input type="password" id="loginPassword" placeholder="Mật khẩu" required>
+        <button type="submit" class="btn">Đăng nhập</button>
+      </form>
+
+      <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+    </div>
+  </main>
+
+  <script type="module" src="js/login.js"></script>
+</body>
+</html>
