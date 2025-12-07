@@ -47,7 +47,6 @@ export function loadWordsFromFirestore(userEmail, listElementId) {
       const li = document.createElement("li");
       li.innerHTML = `
         <strong>${data.word}</strong> 
-        <button onclick="updateWord('${docSnap.id}', '${data.word}')">✏️</button>
         <button onclick="deleteWord('${docSnap.id}')">🗑️</button>
       `;
       savedList.appendChild(li);

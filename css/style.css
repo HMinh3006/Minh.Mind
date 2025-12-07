@@ -14,7 +14,6 @@ body {
 }
 
 
-
 /* ==== Header ==== */
 header {
   display: flex;
@@ -339,7 +338,6 @@ main {
 
 
 
-
 /* Mặc định (light mode) */
 body {
   background-color: #ffffff;
@@ -369,7 +367,6 @@ body.dark-mode {
 #toggle-dark:hover {
   background: #666;
 }
-
 
 
 
@@ -590,7 +587,6 @@ main.dictionary-container {
   font-size: 1.2rem;
 }
 
-
 #search-btn,
 .saved-link {
   background: linear-gradient(135deg, #4e9af1, #3ac8e2);
@@ -626,4 +622,135 @@ main.dictionary-container {
 }
 .saved-link:hover {
   background: linear-gradient(135deg, #b01eff, #7b42f6);
+}
+#sourceLang {
+  width: 180px;
+  padding:10px 14px;
+  font-size:15px;
+  border-radius: 12px;
+  border: 1px solid #000000;
+  background-color: #6cd6f7;
+  color:#ffffff
+}
+#targetLang {
+  width: 180px;
+  padding:10px 14px;
+  font-size:15px;
+  border-radius: 12px;
+  border: 1px solid #000000;
+  background-color: #6cd6f7;
+  color:#ffffff
+}
+.ocr-controls{
+  background-color: #26bbc5;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+  margin: 20px 0;
+  transition: 0.3s ease;
+}
+#imageInput{
+    display: none;
+}
+.custom-file-btn{
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background:#1A1A1A;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn{
+      position: relative;
+  display: inline-block;
+  padding: 10px;
+  background: #F5F7FF;
+  color:#1A1A1A;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+body {
+    background: linear-gradient(135deg, #4b79ff33, #6bd6ff33);
+    font-family: "Poppins", sans-serif;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+input, select, textarea {
+    border-radius: 12px !important;
+    padding: 12px !important;
+    border: 2px solid #dce1ff !important;
+    outline: none;
+    transition: 0.25s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4b79ff !important;
+    box-shadow: 0 0 8px #4b79ff55;
+}
+
+button, .btn {
+    padding: 12px 18px !important;
+    border-radius: 12px !important;
+    background: white !important;
+    color: black !important;
+    border: none !important;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+button:hover, .btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+header, .header {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.result, .output, #result {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.fade-in {
+    animation: fade 0.6s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    header, .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }

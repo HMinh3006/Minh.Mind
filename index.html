@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Từ điển Anh-Việt</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <style>
-    .hidden { display: none !important; }
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1 class="logo">📘 Akihiro Dictionary</h1>
@@ -19,22 +24,58 @@
     </nav>
   </header>
 
+  </section>
+
   <main class="dictionary-container">
-    <section class="search-box">
-      <input type="text" id="wordInput" placeholder="Nhập từ cần tra..." />
-      <button id="searchBtn" class="search-btn">Tra từ</button>
-    </section>
+    <label for="sourceLang">Ngôn ngữ gốc:</label>
+    <select class="sourceLang" id="sourceLang">
+      <option value="en">English</option>
+      <option value="vi">Vietnamese</option>
+      <option value="ja">Japanese</option>
+      <option value="ko">Korean</option>
+      <option value="zh">Chinese</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+    </select>
 
-    <section class="result-box" id="resultBox"></section>
+    <label for="targetLang">Ngôn ngữ dịch:</label>
+    <select id="targetLang">
+      <option value="vi">Vietnamese</option>
+      <option value="en">English</option>
+      <option value="ja">Japanese</option>
+      <option value="ko">Korean</option>
+      <option value="zh">Chinese</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+    </select>
+    <!-- ocr -->
+    <section class="card">
+      <h2>Dịch từ hình ảnh (OCR)</h2>
+      <div class="ocr-controls">
+        <div class="file-upload">
+          <label for="imageInput" class="custom-file-btn"> Chọn tệp</label>
+          <span id="file-name">Không có tệp nào được chọn</span>
+          <input type="file" id="imageInput" accept="image/*" />
+        </div>
+<br>
+        <button id="ocrBtn" class="btn">Nhận dạng & Dịch</button>
+        <div id="ocrResult"></div>
+      </div>
+      <section class="search-box">
+        <input type="text" id="wordInput" placeholder="Nhập từ cần tra/Câu cần dịch..." />
+        <button id="searchBtn" class="search-btn">Tra từ/Dịch câu</button>
+      </section>
 
-    <section class="saved-words">
-      <h2>Từ đã lưu</h2>
-      <ul id="savedList"></ul>
-    </section>
-    <section class="recent-saved">
+      <section class="result-box" id="resultBox"></section>
+
+      <section class="saved-words">
+        <h2>Từ đã lưu</h2>
+        <ul id="savedList"></ul>
+      </section>
+      <section class="recent-saved">
         <button><a class="saved-link" href="save.html"><strong> Các từ đã lưu </strong></a></button>
-  <div class="recent-grid" id="recentGrid"></div>
-</section>
+        <div class="recent-grid" id="recentGrid"></div>
+      </section>
   </main>
 
   <!-- các trang dịch nhỏ -->
@@ -45,7 +86,9 @@
 
     <div class="vocab-grid">
       <div class="vocab-card" title="Từ vựng chuyên ngành y học">
-        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/d3/5d/68/d35d681a-6fd9-df9f-f69c-9494ccdefdd6/source/512x512bb.jpg" alt="Y học" />
+        <img
+          src="https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/d3/5d/68/d35d681a-6fd9-df9f-f69c-9494ccdefdd6/source/512x512bb.jpg"
+          alt="Y học" />
         <button><a class="atp" href="yhoc.html"><strong> Y học </strong></a></button>
       </div>
 
@@ -87,4 +130,5 @@
 
   <script type="module" src="js/script.js"></script>
 </body>
+
 </html>
